@@ -1,0 +1,53 @@
+<!-- import-itineraire.html -->
+<div class="selector">
+  <h4 class="title">{{ title }}</h4>
+
+  <!-- conteneur -->
+  <div class="combo" [class.open]="dropdownOpen">
+    <!-- barre (input + flèche) -->
+    <div class="summary" (mousedown)="openDropdown()" >
+      
+      <input class="search"
+             type="text"
+             placeholder="Rechercher une ligne…"
+             [(ngModel)]="search"
+             (input)="openDropdown()"
+             (focus)="openDropdown()" />
+      <span class="arrow">▾</span>
+    </div>
+
+    <!-- dropdown superposé -->
+        <div class="dropdown" *ngIf="dropdownOpen && groupedFiltered.length; else empty">
+        <ng-container *ngFor="let group of groupedFiltered">
+            <div class="group">{{ group.type }}</div>
+            <label class="option"
+                  *ngFor="let it of group.value; trackBy: trackByIdCbb"
+                  (mousedown)="toggleByMouse($event, it.id)">
+              <input type="checkbox"
+                    [checked]="isActive(it.id)"
+                    readonly />
+              {{ it.id }}
+            </label>
+        </ng-container>
+        </div>
+    <ng-template #empty></ng-template>
+  </div>
+</div>
+
+
+<!-- Liste des lignes déjà chargées -->
+<div class="loaded" *ngIf="active.length">
+  <h4 class="title">{{ title }} chargées</h4>
+  <div
+    cdkDropList
+    (cdkDropListDropped)="drop($event)"
+    class="loaded-lines">
+    <div class="tag"
+         *ngFor="let id of active; trackBy: trackById"
+         cdkDrag
+         [ngStyle]="{ 'background-color': getColorById(id) }">
+      {{ id }}
+      <button class="close-btn" (click)="toggle(id, false)" title="Décharger">✕</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+#layersMainBarContainer {
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    bottom: 10px;
+    display:flex;
+    padding:5px 10px 5px 10px;
+    gap:10px;
+    background-color : gray;
+    border-radius : 10px;
+    justify-content: center;
+    max-height : 100px;
+    max-width:70%;
+    min-width:100px;
+    z-index:10;
+}

@@ -1,0 +1,111 @@
+// src/app/import-itineraire/import-itineraire.scss
+.selector {
+  margin-bottom: 1rem;
+}
+.title {
+  margin: 0 0 .4rem 0;
+  font-size: .9rem;
+  font-weight: 600;
+}
+.combo {
+  position: relative;   /* référence pour dropdown */
+  display: inline-block;
+  width: 100%;
+}
+.summary { display:flex; align-items:center; cursor:pointer; }
+.search {
+  width: 100%;
+  padding: .35rem .5rem;
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+  font-size: .85rem;
+}
+.arrow {
+  position: absolute;
+  right: .5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: .7rem;
+  margin-left:.3rem;
+  font-size:.75rem;
+  color: #666;
+}
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,.15);
+  max-height: 180px;
+  overflow: auto;
+  z-index: 1000;
+  margin-top: .25rem;
+  padding: .25rem 0;
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .85rem;
+  padding: .15rem .5rem;
+}
+.option:hover {
+  background: #f5f5f5;
+}
+.empty {
+  font-size: .8rem;
+  padding: .5rem;
+  color: #666;
+  text-align: center;
+}
+.loaded {
+  margin-top: 1.2rem;
+}
+.loaded-lines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  color: white;
+}
+.loaded-lines .tag {
+  position: relative;
+  background-color: #1E90FF;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+}
+.loaded-lines .tag .close-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+}
+
+.loaded-lines .tag:hover .close-btn {
+  display: block;
+}
+
+.loaded button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: .85rem;
+}

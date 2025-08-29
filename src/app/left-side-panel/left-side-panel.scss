@@ -1,0 +1,49 @@
+// src/app/left-side-panel/left-side-panel.scss
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  pointer-events: none; // laisse passer les events hors panel
+}
+
+.toggle {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  z-index: 1000;
+  background: #ffffffcc;
+  border: none;
+  border-radius: .25rem;
+  padding: .4rem .5rem;
+  cursor: pointer;
+  pointer-events: auto; // cliquable
+  z-index: 8001;
+    // se décale si le panel est ouvert
+}
+
+:host(.open) .toggle {
+  transform: translateX(300px);
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 260px;
+  max-width: 80vw;
+  background: #f59a01;
+  box-shadow: 2px 0 6px rgba(0,0,0,.25);
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+  pointer-events: auto;
+  overflow: auto;
+  padding: 1rem;
+  z-index: 8000;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+}

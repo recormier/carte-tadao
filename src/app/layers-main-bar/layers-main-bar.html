@@ -1,0 +1,11 @@
+<div id="layersMainBarContainer"> 
+    <app-layer-toggle-button
+    *ngFor="let l of layers"
+    [id]="l.id"
+    [icon]="l.icon"
+    [alt]="l.name"
+    [(active)]="l.visible"
+    (activeChange)="onToggle(l.id, $event)">
+    <img [src]="l.icon" [alt]="l.name" />
+    </app-layer-toggle-button>
+</div>

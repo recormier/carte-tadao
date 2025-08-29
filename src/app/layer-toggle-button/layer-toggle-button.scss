@@ -1,0 +1,24 @@
+.layer-btn{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding :2px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    transition: background .2s; 
+    cursor: pointer;
+
+    &.active {
+        background: #ffffff55;  
+        border-bottom: 0px solid #ffffff55;
+    }
+
+    .icon-button{
+        padding:0;
+        margin:0;
+        height:32px;
+        object-fit:cover;
+
+    }
+}

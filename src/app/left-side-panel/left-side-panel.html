@@ -1,0 +1,20 @@
+<!-- src/app/left-side-panel/left-side-panel.html -->
+<button class="toggle" (click)="toggle()">
+  <span *ngIf="!opened">☰</span>
+  <span *ngIf="opened">✕</span>
+</button>
+
+<div class="panel" [class.open]="opened">
+
+  
+  <app-layer-item-selector
+    [title]="'lignes chargées'"
+    [items]="allNumLi"
+    [active]="loadedLines"
+    (add)="loadLine($event)"
+    (remove)="unloadLine($event)"
+    (reorder)="reorderLines($event)" 
+    >
+  </app-layer-item-selector>
+  <ng-content></ng-content>
+</div>
